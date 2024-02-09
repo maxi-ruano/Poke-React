@@ -1,4 +1,4 @@
-Ejecutar npm install en el caso de no tener instalado . 
+Tener instalado Node JS . 
 
 Iniciar Aplicacion : npm start
 
