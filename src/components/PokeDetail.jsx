@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
- import backgroundImage from "../assets/img/b.png"; // Importa la imagen de fondo
+ import backgroundImage from "../assets/img/b.png"; 
 
 
 const PokeDetail = () => {
@@ -11,19 +11,18 @@ const PokeDetail = () => {
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       try {
-        // Realiza una llamada a la API para obtener los detalles del Pokemon
+       
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
         const data = await response.json();
 
-        // Actualiza el estado 'pokemon' con los detalles obtenidos
+        
         setPokemon(data);
       } catch (error) {
         console.error("Error al obtener detalles del Pokémon:", error);
-        // Puedes manejar errores aquí, por ejemplo, mostrar un mensaje de error.
+        
       }
     };
 
-    // Llama a la función para obtener los detalles del Pokemon
     fetchPokemonDetails();
   }, [name]);
 
@@ -39,7 +38,6 @@ const PokeDetail = () => {
         justifyContent: "center",
       }}
     >
-      {/* Contenedor para la imagen de fondo con opacidad */}
       <div
         style={{
           position: 'absolute',
@@ -55,7 +53,6 @@ const PokeDetail = () => {
         }}
       />
   
-      {/* Estilo para el título */}
       <h1
         className="mb-4 text-dark"
         style={{
@@ -73,14 +70,13 @@ const PokeDetail = () => {
             className="card-body"
             style={{
               transition: "background-color 0.3s",
-              backgroundColor: "#fff", // Color de fondo predeterminado
+              backgroundColor: "#fff", 
             }}
             onMouseEnter={() => {
-              // Cambiar el color de fondo al hacer hover
+              
               document.querySelector(".card-body").style.backgroundColor = "#e0e0e0";
             }}
             onMouseLeave={() => {
-              // Restaurar el color de fondo al salir del hover
               document.querySelector(".card-body").style.backgroundColor = "#fff";
             }}
           >

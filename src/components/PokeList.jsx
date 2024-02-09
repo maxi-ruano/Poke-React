@@ -23,7 +23,7 @@ export const PokeList = () => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value.toLowerCase());
-    setCurrentPageSearch(1); // Restablecer la página actual de búsqueda al realizar una nueva búsqueda
+    setCurrentPageSearch(1); 
   };
 
   const filteredList = list.filter((pokemon) =>
@@ -36,11 +36,11 @@ export const PokeList = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPageSearch(pageNumber);
-    setCurrentPage(pageNumber); // Actualizar la página actual principal cuando se cambia la página de búsqueda
+    setCurrentPage(pageNumber); 
   };
 
   useEffect(() => {
-    // Actualizar currentPage cuando se restablece la búsqueda
+   
     if (searchTerm === "") {
       setCurrentPage(currentPageSearch);
     }
